@@ -1,0 +1,223 @@
+:root {
+  --finch-primary: #054533;
+  --finch-secondary: #f67d60;
+  --finch-text-primary-reverse: #f9f4e9;
+  --finch-text-secondary-reverse: #ecddc1;
+  --finch-text-tertiary-reverse: #d8c7ae;
+  --finch-surface-reverse: #0a5a44;
+  --finch-focus: #f2c57c;
+  --finch-success: #67c98d;
+  --finch-error: #e3645b;
+  --type-line-height: 1;
+  --type-2xl: 2rem;
+  --type-lg: 1.375rem;
+  --type-md: 1rem;
+  --type-sm: 0.875rem;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/Satoshi-Black.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing: antialiased;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: "Nunito Sans", "Avenir Next", "Avenir", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-size: var(--type-md);
+  line-height: var(--type-line-height);
+  background: radial-gradient(circle at 20% 20%, #0e664e 0%, var(--finch-primary) 45%, #033527 100%);
+  color: var(--finch-text-primary-reverse);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: "Satoshi", "Avenir Next", "Avenir", "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  font-weight: 900;
+  line-height: var(--type-line-height);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-shell {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: 2rem 2rem 0;
+}
+
+.hero-card {
+  width: min(100%, 35rem);
+  aspect-ratio: 1 / 1;
+  border: 1px solid rgba(236, 221, 193, 0.24);
+  border-radius: 4rem;
+  padding: 2rem 4rem;
+  background: linear-gradient(180deg, rgba(10, 90, 68, 0.82), rgba(5, 69, 51, 0.95));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 32rem) {
+  .hero-card {
+    aspect-ratio: auto;
+    padding: 0 2rem;
+    border-radius: 3rem;
+  }
+}
+
+.logo {
+  width: auto;
+  height: 5rem;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+h1 {
+  font-size: var(--type-2xl);
+}
+
+.hero-copy {
+  margin: 2rem 0;
+}
+
+.hero-copy h2,
+.hero-copy p {
+  margin: 0;
+}
+
+.hero-copy h2 {
+  margin-bottom: 1rem;
+  color: var(--finch-text-secondary-reverse);
+  font-size: var(--type-lg);
+}
+
+.hero-copy p {
+  color: var(--finch-text-tertiary-reverse);
+  font-size: var(--type-md);
+}
+
+.waitlist-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+@media (min-width: 40rem) {
+  .waitlist-form {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.waitlist-form input,
+.waitlist-form button {
+  width: 100%;
+  height: 3rem;
+  border-radius: 999px;
+  border: 0;
+  font-size: var(--type-md);
+}
+
+.waitlist-form input {
+  padding: 0 1.5rem;
+  background: rgba(249, 244, 233, 0.12);
+  border: 1px solid rgba(236, 221, 193, 0.26);
+  color: var(--finch-text-primary-reverse);
+}
+
+.waitlist-form input::placeholder {
+  color: rgba(236, 221, 193, 0.82);
+}
+
+.waitlist-form input:focus-visible,
+.waitlist-form button:focus-visible {
+  outline: 3px solid var(--finch-focus);
+  outline-offset: 2px;
+}
+
+.waitlist-form button {
+  background: var(--finch-secondary);
+  color: var(--finch-text-primary-reverse);
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.waitlist-form button:hover {
+  filter: brightness(1.04);
+}
+
+.waitlist-form button:active {
+  transform: scale(0.98);
+}
+
+.waitlist-form button[disabled] {
+  cursor: wait;
+  opacity: 0.8;
+}
+
+@media (min-width: 40rem) {
+  .waitlist-form button {
+    padding: 0 1.5rem;
+    width: auto;
+  }
+}
+
+.form-message {
+  margin: -1rem 0 2rem;
+  font-size: var(--type-sm);
+  color: var(--finch-text-secondary-reverse);
+}
+
+.form-message:empty {
+  display: none;
+}
+
+.form-message.success {
+  color: var(--finch-success);
+}
+
+.form-message.error {
+  color: var(--finch-error);
+}
+
+.site-footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: var(--type-sm);
+  color: var(--finch-text-tertiary-reverse);
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
