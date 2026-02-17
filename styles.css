@@ -37,8 +37,17 @@ body {
   font-family: "Nunito Sans", "Avenir Next", "Avenir", "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
   font-size: var(--type-md);
   line-height: var(--type-line-height);
-  background: radial-gradient(circle at 20% 20%, #0e664e 0%, var(--finch-primary) 45%, #033527 100%);
+  background: var(--finch-primary);
+  background-image: radial-gradient(circle at 20% 20%, #0e664e 0%, var(--finch-primary) 45%, #033527 100%);
   color: var(--finch-text-primary-reverse);
+}
+
+/* On mobile devices that may have top/bottom UI, use a centred gradient to prevent a hard transition to the solid background color at the edges */
+@media (hover: none) and (pointer: coarse) {
+  html,
+  body {
+    background-image: none;
+  }
 }
 
 h1,
@@ -55,6 +64,7 @@ h6 {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
