@@ -80,10 +80,11 @@ body {
   text-align: center;
 }
 
-@media (min-width: 32rem) {
+@media (min-width: 40rem) {
   .hero-card {
     width: min(100%, 35rem);
     aspect-ratio: 1 / 1;
+    position: relative;
     border: 1px solid rgba(236, 221, 193, 0.24);
     border-radius: 4rem;
     padding: 2rem 4rem;
@@ -209,6 +210,61 @@ h1 {
 
 .form-message.error {
   color: var(--finch-error);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.social-links a {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid rgba(236, 221, 193, 0.34);
+  color: var(--finch-text-secondary-reverse);
+  background: rgba(249, 244, 233, 0.06);
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-1px);
+  color: var(--finch-text-primary-reverse);
+  background: rgba(249, 244, 233, 0.12);
+}
+
+.social-links a:focus-visible {
+  outline: 3px solid var(--finch-focus);
+  outline-offset: 2px;
+}
+
+.social-links i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+@media (min-width: 40rem) {
+  .social-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.75rem;
+    margin: 0;
+  }
+
+  .social-links a {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .social-links i {
+    font-size: 0.9rem;
+  }
 }
 
 .site-footer {
